@@ -7,6 +7,9 @@ server.use(express.static("public"))
 
 // Configurando o NUNJUCKS
 const nunjucks = require('nunjucks')
+    nunjucks.configure("wiews", {
+        
+    })
 
 
 // Criando uma rota raiz '/'
