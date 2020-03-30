@@ -2,6 +2,57 @@
 const express = require('express')
 const server = express()
 
+const ideas = [
+
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729007.svg",
+        title: "Cursos de programação",
+        category: "Estudos",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        url: "https://www.github.com/Ias4g"
+    },
+
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729005.svg",
+        title: "Exercícios",
+        category: "Saúde",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        url: "https://www.github.com/Ias4g"
+    },
+
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729027.svg",
+        title: "Meditação",
+        category: "Mentalidade",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        url: "https://www.github.com/Ias4g"
+    },
+
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729032.svg",
+        title: "Karaokê",
+        category: "Diversão em familia",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        url: "https://www.github.com/Ias4g"
+    },
+
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729038.svg",
+        title: "Pinturas",
+        category: "Criatividades",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        url: "https://www.github.com/Ias4g"
+    },
+
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729048.svg",
+        title: "Recortes",
+        category: "Criatividades",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
+        url: "https://www.github.com/Ias4g"
+    }
+]
+
 // Configurando arquivos estáticos como styles, scripts e images
 server.use(express.static("public"))
 
@@ -15,11 +66,22 @@ const nunjucks = require('nunjucks')
 
 // Criando uma rota raiz '/'
 server.get("/", function(req, res){
-    return res.render('index.html')
+
+    const reversedIdeas = [...ideas].reverse()
+
+    let lastIdeas = []
+    for(let idea of reversedIdeas){
+        if(lastIdeas.length < 2){
+            lastIdeas.push(idea)
+        }
+    }
+
+    return res.render('index.html', { ideas: lastIdeas })
 })
 
 server.get("/ideias", function(req, res){
-    return res.render('ideias.html')
+    const reversedIdeas = [...ideas].reverse()
+    return res.render('ideias.html', { ideas: reversedIdeas })
 })
 
 // Colocando server para rodar na porta 3000
