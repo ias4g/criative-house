@@ -7,18 +7,19 @@ server.use(express.static("public"))
 
 // Configurando o NUNJUCKS
 const nunjucks = require('nunjucks')
-    nunjucks.configure("wiews", {
-        
+    nunjucks.configure("views", {
+        express: server,
+        noCache: true
     })
 
 
 // Criando uma rota raiz '/'
 server.get("/", function(req, res){
-    return res.sendFile(__dirname + '/index.html')
+    return res.render('index.html')
 })
 
 server.get("/ideias", function(req, res){
-    return res.sendFile(__dirname + '/ideias.html')
+    return res.render('ideias.html')
 })
 
 // Colocando server para rodar na porta 3000
