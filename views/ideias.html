@@ -28,17 +28,7 @@
         </section>
         <main>
             <section id="ideas">
-                {% for idea in ideas %}
-                    <div class="idea">
-                        <img src="{{ idea.img }}" alt="{{ idea.title }}">
-                        <div class="content">
-                            <h3>{{ idea.title }}</h3>
-                            <p>{{ idea.category }}</p>
-                            <div class="description">{{ idea.description }}</div>
-                            <a href="{{ idea.url }}" target="_blank">Ir para a ideia</a>
-                        </div>
-                    </div>
-                {% endfor %}
+                {% include "all_ideas.html" %}
             </section>
         </main>
         <footer>
@@ -47,46 +37,7 @@
     </div>
 
     <!-- Modal -->
-    <div id="modal" class="hide">
-
-        <div class="content">
-
-            <h1>Nova Ideia</h1>
-            <form action="" method="post">
-
-                <div class="input-wrapper">
-                    <label for="title">Titulo da ideia</label>
-                    <input type="text" name="title">
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="Category">Categoria</label>
-                    <input type="text" name="Category">
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="image">Link da imagem</label>
-                    <input type="url" name="image">
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="description">Digite uma descrição para esta ideia</label>
-                    <textarea name="description" cols="30" rows="2"></textarea>
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="link">Link da ideia</label>
-                    <input type="url" name="link">
-                </div>
-
-                <a href="#" onclick="onOff()">Voltar</a>
-                <button>Salvar</button>
-
-            </form>
-
-        </div>
-
-    </div>
+    {% include "modal.html" %}
 
     <script src="/script.js"></script>
 </body>
