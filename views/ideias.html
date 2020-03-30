@@ -1,45 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends "layout.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% set bodyId = "page-ideas" %}
+
+{% block title %}
     <title>Ideias - Casa Criativa</title>
+{% endblock title %}
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/modal.css">
-    <link rel="stylesheet" href="/ideias.css">
-</head>
-
-<body id="page-ideas">
-    <div id="container">
-        <header>
-            <a href="/">
-                <img src="/CasaCriativa.png" alt="Casa criativa">
-            </a>
-            <nav>
-                <li><a href="/">Início</a></li>
-                <li class="button" onclick="onOff()"><a href="#"></a>Nova ideia</li>
-            </nav>
-        </header>
-        <section id="title">
-            <p>Em exibição</p>
-            <h1>Ideias</h1>
-        </section>
-        <main>
-            <section id="ideas">
-                {% include "all_ideas.html" %}
-            </section>
-        </main>
-        <footer>
-            Com ❤️ <a href="https://www.rocketseat.com.br" target="_blank">Rocketseat</a>
-        </footer>
-    </div>
-
-    <!-- Modal -->
-    {% include "modal.html" %}
-
-    <script src="/script.js"></script>
-</body>
-
-</html>
+{% block content %}
+<header>
+    <a href="/">
+        <img src="/CasaCriativa.png" alt="Casa criativa">
+    </a>
+    <nav>
+        <li><a href="/">Início</a></li>
+        <li class="button" onclick="onOff()"><a href="#"></a>Nova ideia</li>
+    </nav>
+</header>
+<section id="title">
+    <p>Em exibição</p>
+    <h1>Ideias</h1>
+</section>
+<main>
+    <section id="ideas">
+        {% include "all_ideas.html" %}
+    </section>
+</main>
+<footer>
+    Com ❤️ <a href="https://www.rocketseat.com.br" target="_blank">Rocketseat</a>
+</footer>
+{% endblock %}
