@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideias - Casa Criativa</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="ideias.css">
+</head>
+
+<body id="page-ideas">
+    <div id="container">
+        <header>
+            <a href="index.html">
+                <img src="CasaCriativa.png" alt="Casa criativa">
+            </a>
+            <nav>
+                <li><a href="index.html">Início</a></li>
+                <li class="button" onclick="onOff()"><a href="#"></a>Nova ideia</li>
+            </nav>
+        </header>
+        <section id="title">
+            <p>Em exibição</p>
+            <h1>Ideias</h1>
+        </section>
+        <main>
+            <section id="ideas">
+                <div class="idea">
+                    <img src="https://image.flaticon.com/icons/svg/2729/2729007.svg" alt="Programação">
+                    <div class="content">
+                        <h3>Cursos de programação</h3>
+                        <p>Categoria: Estudos</p>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sunt temporibus quidem
+                            quisquam
+                            eaque corrupti repellat consectetur illum suscipit, dolorum voluptas molestias labore
+                            facilis
+                            earum animi veniam? Exercitationem, placeat labore!
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+
+                <div class="idea">
+                    <img src="https://image.flaticon.com/icons/svg/2729/2729005.svg" alt="Exercícios">
+                    <div class="content">
+                        <h3>Exercícios</h3>
+                        <p>Categoria: Saude</p>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sunt temporibus quidem
+                            quisquam
+                            eaque corrupti repellat consectetur illum suscipit, dolorum voluptas molestias labore
+                            facilis
+                            earum animi veniam? Exercitationem, placeat labore!
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+
+                <div class="idea">
+                    <img src="https://image.flaticon.com/icons/svg/2729/2729027.svg" alt="Mentalidade">
+                    <div class="content">
+                        <h3>Meditação</h3>
+                        <p>Categoria: Mentalidade</p>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sunt temporibus quidem
+                            quisquam
+                            eaque corrupti repellat consectetur illum suscipit, dolorum voluptas molestias labore
+                            facilis
+                            earum animi veniam? Exercitationem, placeat labore!
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+
+                <div class="idea">
+                    <img src="https://image.flaticon.com/icons/svg/2729/2729032.svg" alt="Karaokê">
+                    <div class="content">
+                        <h3>Karaokê</h3>
+                        <p>Categoria: Diversão em familia</p>
+                        <div class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio sunt temporibus quidem
+                            quisquam
+                            eaque corrupti repellat consectetur illum suscipit, dolorum voluptas molestias labore
+                            facilis
+                            earum animi veniam? Exercitationem, placeat labore!
+                        </div>
+                        <a href="#">Ir para a ideia</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            Com ❤️ <a href="https://www.rocketseat.com.br" target="_blank">Rocketseat</a>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="hide">
+
+        <div class="content">
+
+            <h1>Nova Ideia</h1>
+            <form action="" method="post">
+
+                <div class="input-wrapper">
+                    <label for="title">Titulo da ideia</label>
+                    <input type="text" name="title">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="Category">Categoria</label>
+                    <input type="text" name="Category">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="image">Link da imagem</label>
+                    <input type="url" name="image">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="description">Digite uma descrição para esta ideia</label>
+                    <textarea name="description" cols="30" rows="2"></textarea>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="link">Link da ideia</label>
+                    <input type="url" name="link">
+                </div>
+
+                <a href="#" onclick="onOff()">Voltar</a>
+                <button>Salvar</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
