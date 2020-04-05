@@ -68,8 +68,11 @@ const nunjucks = require('nunjucks')
 
 // Criando uma rota raiz '/'
 server.get("/", function(req, res){
-    db.all(`SELECT* FROM ideas`, function(err, rows){
-        if (err) return console.log(err)
+    db.all(`SELECT * FROM ideas`, function(err, rows){
+        if (err){
+            console.log(err)
+            return res.send('Erro ao tentar fazer a seleção no banco de dados - ' + err)
+        }
 
         const reversedIdeas = [...rows].reverse()
 
@@ -85,8 +88,11 @@ server.get("/", function(req, res){
 })
 
 server.get("/ideias", function(req, res){
-    db.all(`SELECT* FROM ideas`, function(err, rows){
-        if (err) return console.log(err)
+    db.all(`SELECT * FROM ideas`, function(err, rows){
+        if (err){
+            console.log(err)
+            return res.send('Erro ao tentar fazer a seleção no banco de dados - ' + err)
+        }
         const reversedIdeas = [...rows].reverse()
         return res.render('ideias.html', { ideas: reversedIdeas })
     })
