@@ -16,28 +16,7 @@ db.serialize(function(){
     `)
 
 
-    //Inserindo dados na tabela
-    // const query = `
-    //     INSERT INTO ideas (
-    //         image,
-    //         title,
-    //         category,
-    //         description,
-    //         link
-    //     ) VALUES (?,?,?,?,?);
-    // `
-    // const values = [
-    //     "https://image.flaticon.com/icons/svg/2729/2729007.svg",
-    //     "Cursos de programação",
-    //     "Estudos",
-    //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-    //     "https://www.github.com/Ias4g"
-    // ]
-
-    // db.run(query, values, function(err){
-    //     if (err) return console.log(err)
-    //     console.log(this)
-    // })
+    
 
 
     //Consultando dados na tabela

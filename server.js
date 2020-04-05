@@ -4,59 +4,11 @@ const server = express()
 
 const db = require('./db')
 
-// const ideas = [
-
-//     {
-//         img: "https://image.flaticon.com/icons/svg/2729/2729007.svg",
-//         title: "Cursos de programação",
-//         category: "Estudos",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-//         url: "https://www.github.com/Ias4g"
-//     },
-
-//     {
-//         img: "https://image.flaticon.com/icons/svg/2729/2729005.svg",
-//         title: "Exercícios",
-//         category: "Saúde",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-//         url: "https://www.github.com/Ias4g"
-//     },
-
-//     {
-//         img: "https://image.flaticon.com/icons/svg/2729/2729027.svg",
-//         title: "Meditação",
-//         category: "Mentalidade",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-//         url: "https://www.github.com/Ias4g"
-//     },
-
-//     {
-//         img: "https://image.flaticon.com/icons/svg/2729/2729032.svg",
-//         title: "Karaokê",
-//         category: "Diversão em familia",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-//         url: "https://www.github.com/Ias4g"
-//     },
-
-//     {
-//         img: "https://image.flaticon.com/icons/svg/2729/2729038.svg",
-//         title: "Pinturas",
-//         category: "Criatividades",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-//         url: "https://www.github.com/Ias4g"
-//     },
-
-//     {
-//         img: "https://image.flaticon.com/icons/svg/2729/2729048.svg",
-//         title: "Recortes",
-//         category: "Criatividades",
-//         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. ",
-//         url: "https://www.github.com/Ias4g"
-//     }
-// ]
-
 // Configurando arquivos estáticos como styles, scripts e images
 server.use(express.static("public"))
+
+//Habilitando o usode req.body
+server.use(express.urlencoded({ extended: true }))
 
 // Configurando o NUNJUCKS
 const nunjucks = require('nunjucks')
@@ -95,6 +47,36 @@ server.get("/ideias", function(req, res){
         }
         const reversedIdeas = [...rows].reverse()
         return res.render('ideias.html', { ideas: reversedIdeas })
+    })
+})
+
+server.post("/", function(req, res){
+    //return res.send("dados recebidos pelo metodo POST")
+    //Inserindo dados na tabela
+    const query = `
+        INSERT INTO ideas (
+            image,
+            title,
+            category,
+            description,
+            link
+        ) VALUES (?,?,?,?,?);
+    `
+    const values = [
+        req.body.image,
+        req.body.title,
+        req.body.category,
+        req.body.description,
+        req.body.link
+    ]
+
+    db.run(query, values, function(err){
+        if (err){
+            console.log(err)
+            return res.send('Erro ao tentar fazer a seleção no banco de dados - ' + err)
+        }
+        
+        return res.redirect('/ideias')
     })
 })
 
