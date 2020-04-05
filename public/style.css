@@ -20,7 +20,7 @@ a:hover{
 }
 
 p, .description{
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     letter-spacing: 0.1px;
 }
@@ -32,7 +32,7 @@ p, .description{
     width: 150px;
     height: 40px;
     box-shadow: #ff5e8432;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
 
     display: flex;
@@ -73,7 +73,7 @@ button{
     background: none;
     color: #ff5e84;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.2px;
     font-weight: bold;
@@ -88,7 +88,7 @@ button:hover{
 
 footer{
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 18px;
     letter-spacing: 0.2px;
@@ -125,4 +125,9 @@ footer a{
 
 .idea .description{
     margin: 16px 0px;
+}
+
+.idea a{
+    float: right;
+    font-size: 12px;
 }
