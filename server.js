@@ -51,7 +51,25 @@ server.get("/ideias", function(req, res){
 })
 
 server.post("/", function(req, res){
-    //return res.send("dados recebidos pelo metodo POST")
+
+    const dt = new Date()
+
+    let day = dt.getDate()
+    const moth = dt.getMonth()
+    const year = dt.getFullYear()
+
+    const hours = dt.getHours()
+    const minutes = dt.getMinutes()
+    const seconds = dt.getSeconds()
+
+    const days = day < 10 ? `0${day}`:day
+    const moths = moth < 10 ? `0${moth}`:moth
+
+    const fullDate = `${days}/${moths}/${year}`
+    const fullHours = `${hours}:${minutes}:${seconds}`
+
+    const created = `${fullDate} às ${fullHours}`
+
     //Inserindo dados na tabela
     const query = `
         INSERT INTO ideas (
@@ -59,15 +77,17 @@ server.post("/", function(req, res){
             title,
             category,
             description,
-            link
-        ) VALUES (?,?,?,?,?);
+            link,
+            createdAt
+        ) VALUES (?,?,?,?,?,?);
     `
     const values = [
         req.body.image,
         req.body.title,
         req.body.category,
         req.body.description,
-        req.body.link
+        req.body.link,
+        created
     ]
 
     db.run(query, values, function(err){
@@ -76,7 +96,7 @@ server.post("/", function(req, res){
             return res.send('Erro ao tentar fazer a seleção no banco de dados - ' + err)
         }
         
-        return res.redirect('/ideias')
+        return res.redirect('/')
     })
 })
 

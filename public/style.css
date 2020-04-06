@@ -119,15 +119,24 @@ footer a{
 }
 
 .idea p{
-    margin: 8px 0px;
+    margin: 0px;
     color: #777;
+}
+
+.idea a{
+    font-size: 12px;
 }
 
 .idea .description{
     margin: 16px 0px;
 }
 
-.idea a{
-    float: right;
-    font-size: 12px;
+.idea p.ideas-footer{
+    font-size: 8px;
+}
+
+#ideas-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

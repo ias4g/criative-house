@@ -11,7 +11,8 @@ db.serialize(function(){
             title TEXT,
             category TEXT,
             description TEXT,
-            link TEXT
+            link TEXT,
+            createdAt TEXT
         );
     `)
 
