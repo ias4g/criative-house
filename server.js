@@ -54,18 +54,23 @@ server.post("/", function(req, res){
 
     const dt = new Date()
 
-    let day = dt.getDate()
-    const moth = dt.getMonth()
-    const year = dt.getFullYear()
+    const d = dt.getDate()
+    const m = dt.getMonth()
+    const yyyy = dt.getFullYear()
 
-    const hours = dt.getHours()
-    const minutes = dt.getMinutes()
-    const seconds = dt.getSeconds()
+    const days = d < 10 ? `0${d}`:d
+    const moths = m < 10 ? `0${m}`:m
+    const fullDate = `${days}/${moths}/${yyyy}`
 
-    const days = day < 10 ? `0${day}`:day
-    const moths = moth < 10 ? `0${moth}`:moth
+    //--------------------------------------------------------
 
-    const fullDate = `${days}/${moths}/${year}`
+    const hs = dt.getHours()
+    const mm = dt.getMinutes()
+    const ss = dt.getSeconds()
+
+    const hours = hs < 10 ? `0${hs}`:hs
+    const minutes = mm < 10 ? `0${mm}`:mm
+    const seconds = ss < 10 ? `0${ss}`:ss
     const fullHours = `${hours}:${minutes}:${seconds}`
 
     const created = `${fullDate} às ${fullHours}`
