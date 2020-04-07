@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose()
-const db = new sqlite3.Database('./creative-house.db')
+const db = new sqlite3.Database('./db/creative-house.db')
  
 db.serialize(function(){
 

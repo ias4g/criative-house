@@ -20,7 +20,7 @@ body.hideScroll{
 }
 
 #modal .content{
-    margin-top: 5%;
+    margin-top: 0;
     color: #fff;
 }
 
@@ -56,6 +56,10 @@ form input, form textarea{
     border: 1px solid rgba(141, 25, 52, 0.5);
     outline: none;
     font-size: 12px;
+}
+
+form textarea{
+    resize: vertical;
 }
 
 form label{
