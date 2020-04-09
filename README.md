@@ -1,3 +1,4 @@
 # creative-house
-    Site para sugerir idéias de como passar a quarentena do vírus COVID-19,
-    onde será possível recomendar o passaporte para o isolamento passar mais rápido.
+    Site to suggest ideas on how to pass the quarantine of the COVID-19 virus,
+    where it will be possible to take advantage of existing ideas and,
+    also let or even register your suggestion for the isolation to pass faster.
