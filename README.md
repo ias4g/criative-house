@@ -7,3 +7,4 @@ also let or even register your suggestion for the isolation to pass faster.
 ![GitHub](https://img.shields.io/github/license/Ias4g/criative-house)
 ![GitHub language count](https://img.shields.io/github/languages/count/Ias4g/criative-house)
 ![GitHub top language](https://img.shields.io/github/languages/top/Ias4g/criative-house)
+![GitHub repo size](https://img.shields.io/github/repo-size/Ias4g/criative-house)
