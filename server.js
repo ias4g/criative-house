@@ -39,6 +39,7 @@ server.get("/", function(req, res){
     })
 })
 
+
 server.get("/ideias", function(req, res){
     db.all(`SELECT * FROM ideas`, function(err, rows){
         if (err){
