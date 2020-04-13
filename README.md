@@ -1,5 +1,6 @@
-<img align="center" src="https://user-images.githubusercontent.com/62667424/79154734-789fc080-7da6-11ea-8c54-a1647c12f480.png">
-
+<p align="center">
+  <img align="center" src="https://user-images.githubusercontent.com/62667424/79154734-789fc080-7da6-11ea-8c54-a1647c12f480.png">
+</p>
 
 <h1 align="center">creative-house</h1>
 <p align="center">
@@ -10,6 +11,8 @@
 </p>
 
 <p align="center">Site to suggest ideas on how to pass the quarantine of the COVID-19 virus, where it will be possible to take advantage of existing ideas and, also let or even register your suggestion for the isolation to pass faster.</p>
+
+<br>
 
 <h3 align="center">Technologies used</h3>
 <h5 align="center">JavaScript - ExpressJS - NodeJS - HTML 5 - Nunjucks - Banco Sqlite3</h5>
