@@ -14,20 +14,30 @@
 <h3 align="center">Technologies used</h3>
 <h5 align="center">JavaScript - ExpressJS - NodeJS - HTML 5 - Nunjucks - Banco Sqlite3</h5>
 
+<br>
+
 <h4 align="center">This page shows the latest ideas registered.</h4>
-<img align="center" src="https://user-images.githubusercontent.com/62667424/79154780-8c4b2700-7da6-11ea-8fc4-1c094f19ec1c.PNG">
+<p align="center">
+  <img align="center" src="https://user-images.githubusercontent.com/62667424/79154780-8c4b2700-7da6-11ea-8fc4-1c094f19ec1c.PNG">
+</p>
 
 <br>
 
 <h4 align="center">Here shows all the ideas available</h4>
-<img align="center" src="https://user-images.githubusercontent.com/62667424/79154784-8d7c5400-7da6-11ea-9aea-3208739ab044.PNG">
+<p align="center">
+  <img align="center" src="https://user-images.githubusercontent.com/62667424/79154784-8d7c5400-7da6-11ea-9aea-3208739ab044.PNG">
+</p>
 
 <br>
 
 <h4 align="center">New ideas registration form</h4>
-<img align="center" src="https://user-images.githubusercontent.com/62667424/79154782-8d7c5400-7da6-11ea-9750-520048ff857d.PNG">
+<p align="center">
+  <img align="center" src="https://user-images.githubusercontent.com/62667424/79154782-8d7c5400-7da6-11ea-9750-520048ff857d.PNG">
+</p>
 
 <br>
 
 <h4 align="center">This link takes you directly to the website of the complete idea</h4>
-<img align="center" src="https://user-images.githubusercontent.com/62667424/79154786-8e14ea80-7da6-11ea-803c-ca06f822cd92.PNG">
+<p align="center">
+  <img align="center" src="https://user-images.githubusercontent.com/62667424/79154786-8e14ea80-7da6-11ea-803c-ca06f822cd92.PNG">
+</p>
