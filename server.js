@@ -12,16 +12,16 @@ server.use(express.urlencoded({ extended: true }))
 
 // Configurando o NUNJUCKS
 const nunjucks = require('nunjucks')
-    nunjucks.configure("views", {
-        express: server,
-        noCache: true
-    })
+nunjucks.configure("views", {
+    express: server,
+    noCache: true
+})
 
 
 // Criando uma rota raiz '/'
-server.get("/", function(req, res){
-    db.all(`SELECT * FROM ideas`, function(err, rows){
-        if (err){
+server.get("/", function (req, res) {
+    db.all(`SELECT * FROM ideas`, function (err, rows) {
+        if (err) {
             console.log(err)
             return res.send('Erro ao tentar fazer a seleção no banco de dados - ' + err)
         }
@@ -29,8 +29,8 @@ server.get("/", function(req, res){
         const reversedIdeas = [...rows].reverse()
 
         let lastIdeas = []
-        for(let idea of reversedIdeas){
-            if(lastIdeas.length < 2){
+        for (let idea of reversedIdeas) {
+            if (lastIdeas.length < 2) {
                 lastIdeas.push(idea)
             }
         }
@@ -40,9 +40,9 @@ server.get("/", function(req, res){
 })
 
 
-server.get("/ideias", function(req, res){
-    db.all(`SELECT * FROM ideas`, function(err, rows){
-        if (err){
+server.get("/ideias", function (req, res) {
+    db.all(`SELECT * FROM ideas`, function (err, rows) {
+        if (err) {
             console.log(err)
             return res.send('Erro ao tentar fazer a seleção no banco de dados - ' + err)
         }
@@ -51,30 +51,17 @@ server.get("/ideias", function(req, res){
     })
 })
 
-server.post("/", function(req, res){
+server.post("/", function (req, res) {
 
     const dt = new Date()
 
-    const d = dt.getDate()
-    const m = dt.getMonth()
-    const yyyy = dt.getFullYear()
-
-    const days = d < 10 ? `0${d}`:d
-    const moths = m < 10 ? `0${m}`:m
-    const fullDate = `${days}/${moths}/${yyyy}`
+    const dataFormatada = ((dt.getDate())) + "/" + ((dt.getMonth() + 1)) + "/" + dt.getFullYear()
 
     //--------------------------------------------------------
 
-    const hs = dt.getHours()
-    const mm = dt.getMinutes()
-    const ss = dt.getSeconds()
+    const horaFormatada = ((dt.getHours())) + ":" + ((dt.getMinutes())) + ":" + dt.getSeconds()
 
-    const hours = hs < 10 ? `0${hs}`:hs
-    const minutes = mm < 10 ? `0${mm}`:mm
-    const seconds = ss < 10 ? `0${ss}`:ss
-    const fullHours = `${hours}:${minutes}:${seconds}`
-
-    const created = `${fullDate} às ${fullHours}`
+    const created = `${dataFormatada} às ${horaFormatada}`
 
     //Inserindo dados na tabela
     const query = `
@@ -96,15 +83,17 @@ server.post("/", function(req, res){
         created
     ]
 
-    db.run(query, values, function(err){
-        if (err){
+    db.run(query, values, function (err) {
+        if (err) {
             console.log(err)
             return res.send('Erro ao tentar fazer a seleção no banco de dados - ' + err)
         }
-        
+
         return res.redirect('/')
     })
 })
 
 // Colocando server para rodar na porta 3000
-server.listen(3000)
+server.listen(3000, () => {
+    console.log("Server running in address: http://localhost:3000")
+})
